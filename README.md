@@ -47,7 +47,7 @@ API Endpoints :
         "password":"abhi1234"
      }
 
-
+   
      ------> Response Body
      {
     "code": 200,
@@ -60,6 +60,8 @@ API Endpoints :
         "password": "abhi1234"
     }
   }
+
+
 
 ---------------------------------------------------
      
