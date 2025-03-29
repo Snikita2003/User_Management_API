@@ -15,7 +15,7 @@ API Endpoints :
    method - post 
    http://localhost:8080/users
 
-   {
+   {  <br>
     "firstName":"Abhijeet", <br>
     "lastName":"Debadwar", <br>
     "email":"abhijeet@gmail.com", <br>
@@ -23,7 +23,7 @@ API Endpoints :
    }
 
    ----> Response Body  <br>
-   {
+   { <br>
     "code": 200,  <br>
     "message": "success",  <br>
     "user": {  <br>
@@ -43,22 +43,22 @@ API Endpoints :
      method - post 
      http://localhost:8080/users/get  <br>
 
-     {
-        "email":"abhijeet@gmail.com", <br>
-        "password":"abhi1234" <br>
+     { <br>
+           "email":"abhijeet@gmail.com", <br>
+           "password":"abhi1234" <br>
      }
 
    
      ------> Response Body
-     {
-    "code": 200, <br>
-    "message": "success",  <br>
-    "user": { <br>
-        "userId": 1, <br>
-        "firstName": "Abhijeet", <br>
-        "lastName": "Debadwar", <br>  
-        "email": "abhijeet@gmail.com", <br>
-        "password": "abhi1234" <br>
+     { <br>
+           "code": 200, <br>
+           "message": "success",  <br>
+           "user": { <br>
+               "userId": 1, <br>
+               "firstName": "Abhijeet", <br>
+               "lastName": "Debadwar", <br>  
+               "email": "abhijeet@gmail.com", <br>
+               "password": "abhi1234" <br>
     }
   }
 
@@ -73,16 +73,16 @@ Method- put
  <br>
 
 ----> Request Body
-{
-    "firstName":"Harry", <br>
-    "lastName":"potter", <br>
-    "email":"abhijeet@gmail.com", <br>
-    "password":"abhi1234" <br>
+{        <br>
+        "firstName":"Harry", <br>
+        "lastName":"potter", <br>
+        "email":"abhijeet@gmail.com", <br>
+        "password":"abhi1234" <br>
 }
 
 ------> Response Body
  <br>
-{
+{     <br>
     "code": 200,  <br>
     "message": "updated", <br>
     "user": { <br>
@@ -103,17 +103,17 @@ http://localhost:8080/users?email=abhijeet@gmail.com&pass= abhi1234 <br>
 Method- DELETE
 
 Response Body-
-
-{
-    "code": 200, <br>
-    "message": "User deleted", <br>
-    "user": { <br>
-        "userId": 1, <br>
-        "firstName": "Abhijeet", <br>
-        "lastName": "Debadwar", <br>
-        "email": "abhijeet@gmail.com", <br>
-        "password": "abhi1234" <br>
-    }
+  
+  {    <br>
+      "code": 200, <br>
+      "message": "User deleted", <br>
+      "user": { <br>
+          "userId": 1, <br>
+          "firstName": "Abhijeet", <br>
+          "lastName": "Debadwar", <br>
+          "email": "abhijeet@gmail.com", <br>
+          "password": "abhi1234" <br>
+      }
 }
 
 
