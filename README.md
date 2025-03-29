@@ -8,6 +8,7 @@ This is a RESTful API for managing users, built using Java Spring Boot Framework
 API Endpoints :
 
 ------ CRUD Operaions ----
+
 1.  Create New User
 
    Request Body - 
@@ -34,7 +35,7 @@ API Endpoints :
     }
 }
 
-
+------------------------------------------------------------------
 2.   get User by Email and Password
      Request body -
      
@@ -60,7 +61,7 @@ API Endpoints :
     }
   }
 
-
+---------------------------------------------------
      
  3.   put / user  -> update by Email id
 
@@ -88,7 +89,7 @@ Method- put
     }
 }
 
-
+------------------------------------------------------
 
 4 .  Delete  User by EmailId
 
@@ -125,7 +126,8 @@ Respose Body
 -------------------------------------------------------------------------------
 
 
-Additional Api's
+---------------------ADDITIONAL API'S------------------------
+
 1  getUserById   --  get User from Database given userId
 2   getAllUsers  --    get All the users from Table
 3   createMultipleUsers()  --  create Multiple new users like List in table at a time
@@ -135,7 +137,7 @@ Additional Api's
 
 
 
-----------Implemeted Api's------------
+---------------Implemeted Api's---------------
 
 1  getUserById   --  get User from Database given userId
 2   getAllUsers  --    get All the users from Table
