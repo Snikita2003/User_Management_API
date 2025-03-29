@@ -17,8 +17,6 @@ API Endpoints :
 
    {
     "firstName":"Abhijeet", 
-
-    
     "lastName":"Debadwar",
     "email":"abhijeet@gmail.com",
     "password":"abhi1234"
