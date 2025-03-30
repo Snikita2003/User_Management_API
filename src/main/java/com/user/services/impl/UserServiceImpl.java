@@ -24,9 +24,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User createUser(User user) {
-		
-		User userCreated = userRepo.save(user);
-		return userCreated;
+		return userRepo.save(user);
 	}
 	
 	
@@ -34,7 +32,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUserById(Integer id) {
 
-		User user=this.userRepo.findById(id).orElseThrow(()->new ResourseNotFoundExe("User Not Found with ", id));
+		User user=this.userRepo.findById(id).orElseThrow(()->new ResourseNotFoundExe("User Not Found with Id- ", id));
 		return user;
 	}
 	
@@ -58,7 +56,6 @@ public class UserServiceImpl implements UserService {
 	}
 
 	
-	
 	public User getByEmail(String e)
 	{
 		return this.userRepo.findByEmail(e);
@@ -69,8 +66,7 @@ public class UserServiceImpl implements UserService {
 	
 	public User getUserByEmailAndPassword(String email,String password )
 	{
-		User getuser = this.userRepo.findByEmailAndPassword(email, password);
-		return getuser;	
+		return this.userRepo.findByEmailAndPassword(email, password);
 	}
 	
 	
@@ -79,10 +75,9 @@ public class UserServiceImpl implements UserService {
 	public User deleteUser(String email,String pass) {
 	
 		User user=this.userRepo.findByEmailAndPassword(email, pass);
-	
-		User backupUser= user;
-		this.userRepo.delete(user);
-		return backupUser;
+		if(user != null)
+			this.userRepo.delete(user);
+		return user;
 	}
 	
 
@@ -94,25 +89,22 @@ public class UserServiceImpl implements UserService {
 	}
 
 	
+	
 	public List<User> createMultipleUsers( List<User> users )
-	{
-		List<User> getUsers = this.userRepo.findAll();
-		Set<String> emails=new HashSet<String>();
+	{	
+		Set<String> emails = this.userRepo.findAll().stream().map(u->
+		u.getEmail()).collect(Collectors.toSet());
 		
-		for(User u:getUsers )
-			emails.add(u.getEmail());
-		
-		List<User> uniqueUsers = users.stream().filter((user)-> user.getEmail()!=null &&
-				!emails.contains(user.getEmail())).collect(Collectors.toList());
+		List<User> uniqueUsers= users.stream().filter(u->u.getEmail()!=null && 
+				emails.contains(u.getEmail() )).collect(Collectors.toList());
 		
 		this.userRepo.saveAll(uniqueUsers);
 		
 		return uniqueUsers;
-		
-		
 	}
 
 
+	
 	@Override
 	public User changePassword( ChangePassword obj ) {
 		

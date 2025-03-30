@@ -97,7 +97,9 @@ public class UserController {
 	
 	
 	
-	// Optional
+	
+	// Additional API's
+	
 	
 	@GetMapping
 	public ResponseEntity<List<User>> getAllUsers()
@@ -111,12 +113,12 @@ public class UserController {
 	{
 		User getUser = this.userServiceImpl.getUserById(id);
 		UserResponse response = null;
+		
 		if( getUser != null )
-		{
 			response= new UserResponse(HttpStatus.OK.value() , "success", getUser  );
-		}
 		return ResponseEntity.ok( response );
 	}
+	
 	
 	
 	
