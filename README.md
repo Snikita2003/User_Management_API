@@ -17,25 +17,27 @@ API Endpoints :
 
   <pre>
        {  
-              "firstName":"Abhijeet", 
+             "firstName":"Abhijeet", 
             "lastName":"Debadwar", 
             "email":"abhijeet@gmail.com", 
             "password":"abhi1234"
-   }
+      }
   </pre>
 
    ----> Response Body  <br>
-   { <br>
-    "code": 200,  <br>
-    "message": "success",  <br>
-    "user": {  <br>
-        "userId": 1,  <br>
-        "firstName": "Abhijeet",  <br>
-        "lastName": "Debadwar", <br>
-        "email": "abhijeet@gmail.com", <br>
-        "password": "abhi1234" <br>
-    }
+  <pre>
+    { 
+       "code": 200,  
+       "message": "success", 
+       "user": {  <br>
+           "userId": 1,  <br>
+           "firstName": "Abhijeet",  
+           "lastName": "Debadwar", 
+           "email": "abhijeet@gmail.com", 
+           "password": "abhi1234"
+       }
 }
+  </pre>
 
 ------------------------------------------------------------------
  
@@ -45,24 +47,28 @@ API Endpoints :
      method - post 
      http://localhost:8080/users/get  <br>
 
-     { <br>
-           "email":"abhijeet@gmail.com", <br>
-           "password":"abhi1234" <br>
-     }
+     <pre>
+      { 
+           "email":"abhijeet@gmail.com", 
+           "password":"abhi1234" 
+      }
+     </pre>
 
    
      ------> Response Body
-     { <br>
-           "code": 200, <br>
-           "message": "success",  <br>
-           "user": { <br>
-               "userId": 1, <br>
-               "firstName": "Abhijeet", <br>
-               "lastName": "Debadwar", <br>  
-               "email": "abhijeet@gmail.com", <br>
-               "password": "abhi1234" <br>
+    <pre>
+     { 
+           "code": 200, 
+           "message": "success",
+               "user": { 
+               "userId": 1, 
+               "firstName": "Abhijeet", 
+               "lastName": "Debadwar",   
+               "email": "abhijeet@gmail.com",
+               "password": "abhi1234" 
+            }
     }
-  }
+</pre>
 
 
 
@@ -74,27 +80,29 @@ http://localhost:8080/users
 Method- put
  <br>
 
-----> Request Body
-{        <br>
-        "firstName":"Harry", <br>
-        "lastName":"potter", <br>
-        "email":"abhijeet@gmail.com", <br>
-        "password":"abhi1234" <br>
-}
-
-------> Response Body
- <br>
-{     <br>
-    "code": 200,  <br>
-    "message": "updated", <br>
-    "user": { <br>
-        "userId": 2, <br>
-        "firstName": "Harry", <br>
-        "lastName": "potter", <br>
-        "email": "abhijeet@gmail.com", <br>
-        "password": "abhi1234" <br>
-    }
-}
+<pre>
+    ----> Request Body
+  {      
+          "firstName":"Harry", 
+          "lastName":"potter", 
+          "email":"abhijeet@gmail.com",
+          "password":"abhi1234" 
+  }
+  
+  ------> Response Body
+  
+  {    
+       "code": 200,  
+       "message": "updated", 
+       "user": { 
+           "userId": 2, 
+           "firstName": "Harry", 
+           "lastName": "potter", 
+           "email": "abhijeet@gmail.com", 
+           "password": "abhi1234" 
+       }
+  }
+</pre>
 
 ------------------------------------------------------
 
@@ -102,33 +110,34 @@ Method- put
 
 http://localhost:8080/users?email=abhijeet@gmail.com&pass= abhi1234 <br>
  
-Method- DELETE
+<pre>
+ Method- DELETE
 
 Response Body-
   
-  {    <br>
-     &nbsp; "code": 200, <br>
-     &nbsp; "message": "User deleted", <br>
-    &nbsp;  "user": { <br>
-          &nbsp;"userId": 1, <br>
-          &nbsp;"firstName": "Abhijeet", <br>
-       &nbsp;   "lastName": "Debadwar", <br>
-        &nbsp;  "email": "abhijeet@gmail.com", <br>
-        &nbsp;  "password": "abhi1234" <br>
+  {   
+       "code": 200, 
+       "message": "User deleted", 
+      "user": { 
+            "userId": 1, 
+            "firstName": "Abhijeet", 
+            "lastName": "Debadwar",
+            "email": "abhijeet@gmail.com",
+           "password": "abhi1234"
       }
 }
 
 
 --- http://localhost:8080/users?email=abhijeet@gmail.com&pass=abhi1234 <br>
-Respose Body  <br>
+Respose Body 
 
-{ <br>
-    "code": 404, <br>
-    "message": "User not present", <br>
-    "user": null <br>
+{  
+    "code": 404, 
+    "message": "User not present", 
+    "user": null 
 }
-    
-<br>
+
+</pre>
 
 -------------------------------------------------------------------------------
 
