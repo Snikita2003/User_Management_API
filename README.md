@@ -40,14 +40,15 @@ API Endpoints :
   </pre>
 
 ------------------------------------------------------------------
+<pre>
  
 2.   get User by Email and Password
      Request body -
      
      method - post 
-     http://localhost:8080/users/get  <br>
+     http://localhost:8080/users/get 
 
-     <pre>
+     
       { 
            "email":"abhijeet@gmail.com", 
            "password":"abhi1234" 
@@ -68,19 +69,19 @@ API Endpoints :
                "password": "abhi1234" 
             }
     }
-</pre>
+
 
 
 
 ---------------------------------------------------
      
  3.   put / user  -> update by Email id
- <br>
+ 
 http://localhost:8080/users
 Method- put
  <br>
 
-<pre>
+
     ----> Request Body
   {      
           "firstName":"Harry", 
