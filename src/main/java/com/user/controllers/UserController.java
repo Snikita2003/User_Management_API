@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.net.ssl.HttpsURLConnection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -72,12 +74,7 @@ public class UserController {
 		return new UserResponse("not updated " ,  HttpStatus.NOT_FOUND.value() );
 	}
 	
-	
-	
-	
-	
-	
-	
+
 	
 	// http://localhost:8080/users?email=harry@gmail.com&pass=harry1234
 	
@@ -109,14 +106,16 @@ public class UserController {
 	}
 	
 	@GetMapping("/getById/{id}")
-	public ResponseEntity<UserResponse> getUserById( @PathVariable Integer id )
+	public UserResponse getUserById( @PathVariable Integer id )
 	{
 		User getUser = this.userServiceImpl.getUserById(id);
 		UserResponse response = null;
 		
 		if( getUser != null )
-			response= new UserResponse(HttpStatus.OK.value() , "success", getUser  );
-		return ResponseEntity.ok( response );
+			return new UserResponse(HttpStatus.OK.value() , "success", getUser  );
+		
+		return new UserResponse(  "Not found Id", HttpStatus.OK.value() );
+
 	}
 	
 	
@@ -147,7 +146,7 @@ public class UserController {
 	@GetMapping("/{firstName}")
 	public ResponseEntity<List<User>> SerachUsersByFirstName(@PathVariable String firstName)
 	{
-		List<User> users=this.userServiceImpl.SerachUsersByFirstName(firstName);
+		List<User> users=this.userServiceImpl.SeerchUsersByFirstName(firstName);
 		
 		return ResponseEntity.ok( users);
 	}

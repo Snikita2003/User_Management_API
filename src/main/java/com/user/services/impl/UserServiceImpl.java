@@ -121,11 +121,10 @@ public class UserServiceImpl implements UserService {
 
 
 	@Override
-	public List<User> SerachUsersByFirstName(String firstName) {
+	public List<User> SeerchUsersByFirstName(String firstName) {
 		
 		return this.userRepo.findAll().stream().filter((u)-> u.getFirstName().equalsIgnoreCase(firstName)).collect(Collectors.toList());
 	}
-	
 }
 
 
