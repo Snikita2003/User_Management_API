@@ -22,10 +22,10 @@ API Endpoints :
             "email":"abhijeet@gmail.com", 
             "password":"abhi1234"
       }
-  </pre>
+ 
 
    ----> Response Body  <br>
-  <pre>
+  
     { 
        "code": 200,  
        "message": "success", 
@@ -40,14 +40,14 @@ API Endpoints :
   </pre>
 
 ------------------------------------------------------------------
-<pre>
+
  
 2.   get User by Email and Password
      Request body -
      
      method - post 
      http://localhost:8080/users/get 
-
+ <pre>
      
       { 
            "email":"abhijeet@gmail.com", 
@@ -71,7 +71,7 @@ API Endpoints :
     }
 
 
-
+ </pre>
 
 ---------------------------------------------------
      
@@ -79,7 +79,7 @@ API Endpoints :
  
 http://localhost:8080/users
 Method- put
- <br>
+<pre>
 
 
     ----> Request Body
@@ -108,12 +108,12 @@ Method- put
 ------------------------------------------------------
 
 
-<pre>
+
  
 4 .  Delete  User by EmailId
 
 http://localhost:8080/users?email=abhijeet@gmail.com&pass=abhi1234 <br>
- 
+ <pre>
  Method- DELETE
 
 Response Body-
