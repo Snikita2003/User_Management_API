@@ -156,7 +156,9 @@ Respose Body
 5.  Search all users by given First Name
 6.  check Password Expiry
 7.  if Forgot Password  
-8.  get All current Active users 
+8.  get All current Active users
+9. set role to user
+ 
  
 </pre>
 
