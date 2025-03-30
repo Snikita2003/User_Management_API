@@ -125,11 +125,7 @@ public class UserServiceImpl implements UserService {
 		
 		return this.userRepo.findAll().stream().filter((u)-> u.getFirstName().equalsIgnoreCase(firstName)).collect(Collectors.toList());
 	}
-
 	
-	
-
-
 }
 
 
