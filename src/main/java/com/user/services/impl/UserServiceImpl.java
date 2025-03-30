@@ -123,9 +123,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> SerachUsersByFirstName(String firstName) {
 		
-		List<User> users= this.userRepo.findAll();
-		return users.stream().filter((u)-> u.getFirstName().equalsIgnoreCase(firstName)).collect(Collectors.toList());
-		
+		return this.userRepo.findAll().stream().filter((u)-> u.getFirstName().equalsIgnoreCase(firstName)).collect(Collectors.toList());
 	}
 
 	
