@@ -52,11 +52,11 @@ API Endpoints :
            "email":"abhijeet@gmail.com", 
            "password":"abhi1234" 
       }
-     </pre>
+     
 
    
      ------> Response Body
-    <pre>
+   
      { 
            "code": 200, 
            "message": "success",
@@ -118,7 +118,7 @@ Response Body-
   {   
        "code": 200, 
        "message": "User deleted", 
-      "user": { 
+       "user": { 
             "userId": 1, 
             "firstName": "Abhijeet", 
             "lastName": "Debadwar",
