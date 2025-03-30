@@ -174,6 +174,92 @@ Respose Body
 
 
 
+1  get All users from table
+   http://localhost:8080/users
+   Method-  get
+
+   Request body->
+
+  <pre>
+    [
+    {
+        "userId": 1,
+        "firstName": "Abhijeet",
+        "lastName": "Debadwar",
+        "email": "abhijeet@gmail.com",
+        "password": "abhi1234"
+    },
+    {
+        "userId": 2,
+        "firstName": "HarryPotter",
+        "lastName": "potter",
+        "email": "harry@gmail.com",
+        "password": "harry1234"
+    },
+    {
+        "userId": 4,
+        "firstName": "Alice",
+        "lastName": "Smith",
+        "email": "alice.smith@example.com",
+        "password": "alicePass123"
+    },
+    {
+        "userId": 5,
+        "firstName": "Bob",
+        "lastName": "Johnson",
+        "email": "bob.johnson@example.com",
+        "password": "pass123"
+    },
+    {
+        "userId": 6,
+        "firstName": "Alice",
+        "lastName": "abc",
+        "email": "alice@gmail.com",
+        "password": "alice1234"
+    }
+]
+  </pre>
+
+
+
+-------------------------------------------
+2   get user by given id
+    http://localhost:8080/users/getById/1
+    Method - get
+    <pre>
+    
+    {
+    "code": 200,
+    "message": "success",
+    "user": {
+        "userId": 1,
+        "firstName": "Abhijeet",
+        "lastName": "Debadwar",
+        "email": "abhijeet@gmail.com",
+        "password": "abhi1234"
+    }
+}
+    </pre>
+
+    
+ 
+3   create multiple users at one go ( list of users  store in db )
+    http://localhost:8080/users/
+    Method- Post
+
+ 
+
+4   change password of user with given by Email-id
+    http://localhost:8080/users/get/changePass
+    Method - Post
+ 
+5   Search all users by given First Name
+    http://localhost:8080/users/alice
+    Method get
+
+ 
+    
+ 
  
 </pre>
 
