@@ -16,7 +16,7 @@ API Endpoints :
    http://localhost:8080/users
 
    {  <br>
-    "firstName":"Abhijeet", <br>
+      "firstName":"Abhijeet", <br>
     "lastName":"Debadwar", <br>
     "email":"abhijeet@gmail.com", <br>
     "password":"abhi1234"
@@ -63,6 +63,10 @@ API Endpoints :
   }
 
 
+{
+  "email": "abhijeet@gmail.com",
+  "password": "abhi1234"
+}
 
 ---------------------------------------------------
      
