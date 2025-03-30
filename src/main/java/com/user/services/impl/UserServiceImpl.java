@@ -79,7 +79,7 @@ public class UserServiceImpl implements UserService {
 	public User deleteUser(String email,String pass) {
 	
 		User user=this.userRepo.findByEmailAndPassword(email, pass);
-		
+	
 		User backupUser= user;
 		this.userRepo.delete(user);
 		return backupUser;
@@ -124,6 +124,16 @@ public class UserServiceImpl implements UserService {
 			this.userRepo.save(user);
 		}
 		return user;
+	}
+
+
+
+	@Override
+	public List<User> SerachUsersByFirstName(String firstName) {
+		
+		List<User> users= this.userRepo.findAll();
+		return users.stream().filter((u)-> u.getFirstName().equalsIgnoreCase(firstName)).collect(Collectors.toList());
+		
 	}
 
 	

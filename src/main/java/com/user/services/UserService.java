@@ -20,6 +20,8 @@ public interface UserService {
 	public List<User> getAllUsers();
 	public List<User> createMultipleUsers(List<User> users );
 	public User changePassword( ChangePassword obj );
+	public List<User> SerachUsersByFirstName(String firstName);
+	
 	
 	
 	

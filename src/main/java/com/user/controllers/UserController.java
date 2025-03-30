@@ -142,6 +142,14 @@ public class UserController {
 	
 	
 	
+	@GetMapping("/{firstName}")
+	public ResponseEntity<List<User>> SerachUsersByFirstName(@PathVariable String firstName)
+	{
+		List<User> users=this.userServiceImpl.SerachUsersByFirstName(firstName);
+		
+		return ResponseEntity.ok( users);
+	}
+	
 
 	
 	
