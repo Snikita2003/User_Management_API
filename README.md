@@ -63,10 +63,6 @@ API Endpoints :
   }
 
 
-{
-  "email": "abhijeet@gmail.com",
-  "password": "abhi1234"
-}
 
 ---------------------------------------------------
      
@@ -109,14 +105,14 @@ Method- DELETE
 Response Body-
   
   {    <br>
-      "code": 200, <br>
-      "message": "User deleted", <br>
-      "user": { <br>
-          "userId": 1, <br>
-          "firstName": "Abhijeet", <br>
-          "lastName": "Debadwar", <br>
-          "email": "abhijeet@gmail.com", <br>
-          "password": "abhi1234" <br>
+     &nbsp; "code": 200, <br>
+     &nbsp; "message": "User deleted", <br>
+    &nbsp;  "user": { <br>
+          &nbsp;"userId": 1, <br>
+          &nbsp;"firstName": "Abhijeet", <br>
+       &nbsp;   "lastName": "Debadwar", <br>
+        &nbsp;  "email": "abhijeet@gmail.com", <br>
+        &nbsp;  "password": "abhi1234" <br>
       }
 }
 
@@ -124,25 +120,28 @@ Response Body-
 --- http://localhost:8080/users?email=abhijeet@gmail.com&pass=abhi1234 <br>
 Respose Body  <br>
 
-{
+{ <br>
     "code": 404, <br>
     "message": "User not present", <br>
     "user": null <br>
 }
     
-
+<br>
 
 -------------------------------------------------------------------------------
 
 
 ---------------------ADDITIONAL API'S------------------------
 
-1  getUserById   --  get User from Database given userId <br>
+1   getUserById   --  get User from Database given userId <br>
 2   getAllUsers  --    get All the users from Table <br>
 3   createMultipleUsers()  --  create Multiple new users like List in table at a time <br>
 4   changePassword() --  Change old password to newPassword by Given Email id <br>
 5   check password Expiry <br>
-6  get All current Active users <br>
+6   get All current Active users <br>
+7   Forgot Password
+8   Search User bt FirstName 
+
 
 
 
