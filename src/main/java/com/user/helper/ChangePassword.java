@@ -16,7 +16,7 @@ public class ChangePassword {
 
 	public ChangePassword() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public ChangePassword(@NotBlank(message = "Email is required") String email,
