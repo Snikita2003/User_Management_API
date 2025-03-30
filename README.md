@@ -247,7 +247,8 @@ Respose Body
     http://localhost:8080/users/
     Method- Post
     Request Body-
-    <pre>
+    
+   <pre>
     [
          {
            "firstName": "Alice",
@@ -260,9 +261,9 @@ Respose Body
            "lastName": "Johnson",
            "email": "bob.johnson@example.com",
            "password": "bobPass123"
-           
          }
-]</pre>
+   ]
+  </pre>
 
  
 --------------------------------------------------
