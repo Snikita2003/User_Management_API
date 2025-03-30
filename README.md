@@ -1,156 +1,154 @@
- User Management API :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management API Documentation</title>
+</head>
+<body>
 
+    <h1>User Management API Documentation</h1>
 
-Introduction
-This is a RESTful API for managing users, built using Java Spring Boot Framework , MYSQL ( DATABASE )
+    <h2>📌 Introduction</h2>
+    <p>This is a <strong>RESTful API</strong> for managing users, built using the <strong>Java Spring Boot Framework</strong> and connected to a <strong>MySQL Database</strong>.</p>
 
+    <hr>
 
-API Endpoints :
+    <h2>🚀 API Endpoints (CRUD Operations)</h2>
 
------- CRUD Operaions ----
+    <!-- 1. Create New User -->
+    <h3>1️⃣ Create New User</h3>
+    <p><strong>Endpoint:</strong> <code>POST http://localhost:8080/users</code></p>
 
-1.  Create New User
+    <p><strong>Request Body:</strong></p>
+    <pre>{
+    "firstName": "Abhijeet",
+    "lastName": "Debadwar",
+    "email": "abhijeet@gmail.com",
+    "password": "abhi1234"
+}</pre>
 
-   Request Body - 
-   method - post 
-   http://localhost:8080/users
-
-   {  <br>
-      "firstName":"Abhijeet", <br>
-    "lastName":"Debadwar", <br>
-    "email":"abhijeet@gmail.com", <br>
-    "password":"abhi1234"
-   }
-
-   ----> Response Body  <br>
-   { <br>
-    "code": 200,  <br>
-    "message": "success",  <br>
-    "user": {  <br>
-        "userId": 1,  <br>
-        "firstName": "Abhijeet",  <br>
-        "lastName": "Debadwar", <br>
-        "email": "abhijeet@gmail.com", <br>
-        "password": "abhi1234" <br>
+    <p><strong>Response Body:</strong></p>
+    <pre>{
+    "code": 200,
+    "message": "success",
+    "user": {
+        "userId": 1,
+        "firstName": "Abhijeet",
+        "lastName": "Debadwar",
+        "email": "abhijeet@gmail.com",
+        "password": "abhi1234"
     }
-}
+}</pre>
 
-------------------------------------------------------------------
- 
-2.   get User by Email and Password
-     Request body -
-     
-     method - post 
-     http://localhost:8080/users/get  <br>
+    <hr>
 
-     { <br>
-           "email":"abhijeet@gmail.com", <br>
-           "password":"abhi1234" <br>
-     }
+    <!-- 2. Get User by Email and Password -->
+    <h3>2️⃣ Get User by Email and Password</h3>
+    <p><strong>Endpoint:</strong> <code>POST http://localhost:8080/users/get</code></p>
 
-   
-     ------> Response Body
-     { <br>
-           "code": 200, <br>
-           "message": "success",  <br>
-           "user": { <br>
-               "userId": 1, <br>
-               "firstName": "Abhijeet", <br>
-               "lastName": "Debadwar", <br>  
-               "email": "abhijeet@gmail.com", <br>
-               "password": "abhi1234" <br>
+    <p><strong>Request Body:</strong></p>
+    <pre>{
+    "email": "abhijeet@gmail.com",
+    "password": "abhi1234"
+}</pre>
+
+    <p><strong>Response Body:</strong></p>
+    <pre>{
+    "code": 200,
+    "message": "success",
+    "user": {
+        "userId": 1,
+        "firstName": "Abhijeet",
+        "lastName": "Debadwar",
+        "email": "abhijeet@gmail.com",
+        "password": "abhi1234"
     }
-  }
+}</pre>
 
+    <p><strong>Failure Response:</strong></p>
+    <pre>{
+    "code": 404,
+    "message": "User not present",
+    "user": null
+}</pre>
 
+    <hr>
 
----------------------------------------------------
-     
- 3.   put / user  -> update by Email id
- <br>
-http://localhost:8080/users
-Method- put
- <br>
+    <!-- 3. Update User -->
+    <h3>3️⃣ Update User by Email ID</h3>
+    <p><strong>Endpoint:</strong> <code>PUT http://localhost:8080/users</code></p>
 
-----> Request Body
-{        <br>
-        "firstName":"Harry", <br>
-        "lastName":"potter", <br>
-        "email":"abhijeet@gmail.com", <br>
-        "password":"abhi1234" <br>
-}
+    <p><strong>Request Body:</strong></p>
+    <pre>{
+    "firstName": "Harry",
+    "lastName": "Potter",
+    "email": "abhijeet@gmail.com",
+    "password": "abhi1234"
+}</pre>
 
-------> Response Body
- <br>
-{     <br>
-    "code": 200,  <br>
-    "message": "updated", <br>
-    "user": { <br>
-        "userId": 2, <br>
-        "firstName": "Harry", <br>
-        "lastName": "potter", <br>
-        "email": "abhijeet@gmail.com", <br>
-        "password": "abhi1234" <br>
+    <p><strong>Response Body:</strong></p>
+    <pre>{
+    "code": 200,
+    "message": "updated",
+    "user": {
+        "userId": 2,
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "email": "abhijeet@gmail.com",
+        "password": "abhi1234"
     }
-}
+}</pre>
 
-------------------------------------------------------
+    <hr>
 
-4 .  Delete  User by EmailId
+    <!-- 4. Delete User -->
+    <h3>4️⃣ Delete User by Email ID</h3>
+    <p><strong>Endpoint:</strong> <code>DELETE http://localhost:8080/users?email=abhijeet@gmail.com&pass=abhi1234</code></p>
 
-http://localhost:8080/users?email=abhijeet@gmail.com&pass= abhi1234 <br>
- 
-Method- DELETE
+    <p><strong>Response Body (Success):</strong></p>
+    <pre>{
+    "code": 200,
+    "message": "User deleted",
+    "user": {
+        "userId": 1,
+        "firstName": "Abhijeet",
+        "lastName": "Debadwar",
+        "email": "abhijeet@gmail.com",
+        "password": "abhi1234"
+    }
+}</pre>
 
-Response Body-
-  
-  {    <br>
-     &nbsp; "code": 200, <br>
-     &nbsp; "message": "User deleted", <br>
-    &nbsp;  "user": { <br>
-          &nbsp;"userId": 1, <br>
-          &nbsp;"firstName": "Abhijeet", <br>
-       &nbsp;   "lastName": "Debadwar", <br>
-        &nbsp;  "email": "abhijeet@gmail.com", <br>
-        &nbsp;  "password": "abhi1234" <br>
-      }
-}
+    <p><strong>Response Body (Failure):</strong></p>
+    <pre>{
+    "code": 404,
+    "message": "User not present",
+    "user": null
+}</pre>
 
+    <hr>
 
---- http://localhost:8080/users?email=abhijeet@gmail.com&pass=abhi1234 <br>
-Respose Body  <br>
+    <h2>🔧 Additional API Endpoints</h2>
+    <ul>
+        <li><strong>Get User by ID:</strong> <code>GET http://localhost:8080/users/{userId}</code></li>
+        <li><strong>Get All Users:</strong> <code>GET http://localhost:8080/users/all</code></li>
+        <li><strong>Create Multiple Users:</strong> <code>POST http://localhost:8080/users/bulk</code></li>
+        <li><strong>Change Password:</strong> <code>PUT http://localhost:8080/users/changePassword</code></li>
+        <li><strong>Check Password Expiry:</strong> <code>GET http://localhost:8080/users/checkPasswordExpiry?email=abhijeet@gmail.com</code></li>
+        <li><strong>Get All Active Users:</strong> <code>GET http://localhost:8080/users/active</code></li>
+        <li><strong>Forgot Password:</strong> <code>POST http://localhost:8080/users/forgotPassword</code></li>
+        <li><strong>Search User by First Name:</strong> <code>GET http://localhost:8080/users/search?firstName=Abhijeet</code></li>
+    </ul>
 
-{ <br>
-    "code": 404, <br>
-    "message": "User not present", <br>
-    "user": null <br>
-}
-    
-<br>
+    <hr>
 
--------------------------------------------------------------------------------
+    <h2>✅ Implemented APIs</h2>
+    <ul>
+        <li>getUserById</li>
+        <li>getAllUsers</li>
+        <li>createMultipleUsers</li>
+        <li>changePassword</li>
+    </ul>
 
-
----------------------ADDITIONAL API'S------------------------
-
-1   getUserById   --  get User from Database given userId <br>
-2   getAllUsers  --    get All the users from Table <br>
-3   createMultipleUsers()  --  create Multiple new users like List in table at a time <br>
-4   changePassword() --  Change old password to newPassword by Given Email id <br>
-5   check password Expiry <br>
-6   get All current Active users <br>
-7   Forgot Password
-8   Search User bt FirstName 
-
-
-
-
----------------Implemeted Api's--------------- <br>
-
-1  getUserById   --  get User from Database given userId <br>
-2   getAllUsers  --    get All the users from Table <br>
-3   createMultipleUsers()  --  create Multiple new users like List in table at a time <br>
-4   changePassword() --  Change old password to newPassword by Given Email id <br>
-
-
-
+</body>
+</html>
