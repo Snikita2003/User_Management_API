@@ -12,7 +12,7 @@ API Endpoints :
 1.  Create New User
 
    Request Body - 
-   method - post 
+   method - post <br>
    http://localhost:8080/users
 
   <pre>
@@ -45,7 +45,7 @@ API Endpoints :
 2.   get User by Email and Password
      Request body -
      
-     method - post 
+     method - post <br>
      http://localhost:8080/users/get 
  <pre>
      
@@ -78,6 +78,7 @@ API Endpoints :
  3.   put / user  -> update by Email id
  
 http://localhost:8080/users
+<br>
 Method- put
 <pre>
 
@@ -113,9 +114,10 @@ Method- put
 4 .  Delete  User by EmailId
 
 http://localhost:8080/users?email=abhijeet@gmail.com&pass=abhi1234 <br>
- <pre>
+ 
  Method- DELETE
-
+<br>
+<pre>
 Response Body-
   {   
        "code": 200, 
