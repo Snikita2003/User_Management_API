@@ -148,24 +148,35 @@ Respose Body
 
 ---------------------ADDITIONAL API'S------------------------
 
-1   getUserById   --  get User from Database given userId <br>
-2   getAllUsers  --    get All the users from Table <br>
-3   createMultipleUsers()  --  create Multiple new users like List in table at a time <br>
-4   changePassword() --  Change old password to newPassword by Given Email id <br>
-5   check password Expiry <br>
-6   get All current Active users <br>
-7   Forgot Password
-8   Search User by FirstName 
-
+<pre>
+1.  get all users from table
+2.  get user by given id
+3.  create multiple users at one go ( list of users  store in db )
+4.  change password of user with given by Email-id
+5.  Search all users by given First Name
+6.  check Password Expiry
+7.  Forgot Password
+8.  get All current Active users
+ 
+</pre>
 
 
 
 ---------------Implemeted Api's--------------- <br>
 
-1  getUserById   --  get User from Database given userId <br>
-2   getAllUsers  --    get All the users from Table <br>
-3   createMultipleUsers()  --  create Multiple new users like List in table at a time <br>
-4   changePassword() --  Change old password to newPassword by Given Email id <br>
+<pre>
+
+1   get all users from table
+2   get user by given id
+3   create multiple users at one go ( list of users  store in db )
+4   change password of user with given by Email-id
+5   Search all users by given First Name
+
+
+
+ 
+</pre>
+
 
 
 
