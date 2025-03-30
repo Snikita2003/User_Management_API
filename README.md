@@ -107,11 +107,13 @@ Method- put
 
 ------------------------------------------------------
 
+
+<pre>
+ 
 4 .  Delete  User by EmailId
 
-http://localhost:8080/users?email=abhijeet@gmail.com&pass= abhi1234 <br>
+http://localhost:8080/users?email=abhijeet@gmail.com&pass=abhi1234 <br>
  
-<pre>
  Method- DELETE
 
 Response Body-
@@ -152,7 +154,7 @@ Respose Body
 5   check password Expiry <br>
 6   get All current Active users <br>
 7   Forgot Password
-8   Search User bt FirstName 
+8   Search User by FirstName 
 
 
 
@@ -163,3 +165,9 @@ Respose Body
 2   getAllUsers  --    get All the users from Table <br>
 3   createMultipleUsers()  --  create Multiple new users like List in table at a time <br>
 4   changePassword() --  Change old password to newPassword by Given Email id <br>
+
+
+
+
+
+
