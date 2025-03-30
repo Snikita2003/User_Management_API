@@ -271,7 +271,7 @@ Respose Body
     Method - Post
     Request Body-
 
-    <pre> 
+  <pre> 
   {  
         "email": "bob.johnson@example.com",
         "oldPassword":"bobpass123",
@@ -298,7 +298,7 @@ Respose Body
     http://localhost:8080/users/alice
     Method get
 
-    Response Body-
+ Response Body-
 <pre>
     [
       {
