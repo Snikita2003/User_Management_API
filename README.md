@@ -29,7 +29,7 @@ API Endpoints :
     { 
        "code": 200,  
        "message": "success", 
-       "user": {  <br>
+       "user": { 
            "userId": 1,  <br>
            "firstName": "Abhijeet",  
            "lastName": "Debadwar", 
@@ -117,7 +117,6 @@ http://localhost:8080/users?email=abhijeet@gmail.com&pass=abhi1234 <br>
  Method- DELETE
 
 Response Body-
-  
   {   
        "code": 200, 
        "message": "User deleted", 
