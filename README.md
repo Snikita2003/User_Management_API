@@ -178,7 +178,7 @@ Respose Body
    http://localhost:8080/users
    Method-  get
 
-   Request body->
+   Response body->
 
   <pre>
     [
@@ -222,12 +222,11 @@ Respose Body
 
 
 
--------------------------------------------
+--------------------------------------------
 2   get user by given id
     http://localhost:8080/users/getById/1
     Method - get
     <pre>
-    
     {
     "code": 200,
     "message": "success",
@@ -237,25 +236,87 @@ Respose Body
         "lastName": "Debadwar",
         "email": "abhijeet@gmail.com",
         "password": "abhi1234"
-    }
-}
+      }
+  }
     </pre>
 
     
+ -----------------------------------------------------
  
 3   create multiple users at one go ( list of users  store in db )
     http://localhost:8080/users/
     Method- Post
+    Request Body-
+    <pre>
+    [
+         {
+           "firstName": "Alice",
+           "lastName": "Smith",
+           "email": "alice.smith@example.com",
+           "password": "alicePass123"
+         },
+         {
+           "firstName": "Bob",
+           "lastName": "Johnson",
+           "email": "bob.johnson@example.com",
+           "password": "bobPass123"
+           
+         }
+]</pre>
 
  
-
+--------------------------------------------------
 4   change password of user with given by Email-id
     http://localhost:8080/users/get/changePass
     Method - Post
- 
+    Request Body-
+
+    <pre> 
+  {  
+        "email": "bob.johnson@example.com",
+        "oldPassword":"bobpass123",
+        "newPassword": "pass123"
+  }
+
+  Response Body--
+  {
+    "code": 200,
+    "message": "Changed Password successfully",
+    "user": {
+        "userId": 5,
+        "firstName": "Bob",
+        "lastName": "Johnson",
+        "email": "bob.johnson@example.com",
+        "password": "p123"
+    }
+}
+    </pre>
+    
+    
+----------------------------------------------
 5   Search all users by given First Name
     http://localhost:8080/users/alice
     Method get
+
+    Response Body-
+<pre>
+    [
+      {
+            "userId": 4,
+            "firstName": "Alice",
+            "lastName": "Smith",
+            "email": "alice.smith@example.com",
+            "password": "alicePass123"
+      },
+      {
+             "userId": 6,
+             "firstName": "Alice",
+             "lastName": "abc",
+             "email": "alice@gmail.com",
+             "password": "alice1234"
+      }
+]
+</pre>
 
  
     
