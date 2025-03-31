@@ -1,12 +1,14 @@
 package com.user.helper;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.user.entity.User;
 
+@JsonInclude(JsonInclude.Include.NON_ABSENT)
 public class UserResponse {
 	
-	Integer code;
-	String message;
-	User data;
+	private Integer code;
+	private String message;
+	private User data;
 	
 	
 	public UserResponse() {

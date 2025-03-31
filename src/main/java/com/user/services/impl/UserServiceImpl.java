@@ -24,18 +24,14 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User createUser(User user) {
-		return userRepo.save(user);
+		
+		User getUser=this.userRepo.findByEmail(user.getEmail())  ;
+		
+		if( getUser == null)
+			return userRepo.save(user);
+		
+		 return null;
 	}
-	
-	
-
-	@Override
-	public User getUserById(Integer id) {
-
-		User user=this.userRepo.findById(id).orElseThrow(()->new ResourseNotFoundExe("User Not Found with Id- ", id));
-		return user;
-	}
-	
 
 	
 	
@@ -45,7 +41,7 @@ public class UserServiceImpl implements UserService {
 	    User updatedUser = this.userRepo.findByEmail(user.getEmail());
 
 	    if (updatedUser != null) {
-	        updatedUser.setEmail(user.getEmail());
+	    	
 	        updatedUser.setFirstName(user.getFirstName());
 	       updatedUser.setLastName(user.getLastName());
 	        updatedUser.setPassword(user.getPassword());
@@ -55,6 +51,7 @@ public class UserServiceImpl implements UserService {
 	    return updatedUser;
 	}
 
+	
 	
 	public User getByEmail(String e)
 	{
@@ -82,6 +79,14 @@ public class UserServiceImpl implements UserService {
 	
 
 	// optional Api's
+	
+	@Override
+	public User getUserById(Integer id) {
+
+		User user=this.userRepo.findById(id).orElseThrow(()->new ResourseNotFoundExe("User Not Found with Id- ", id));
+		return user;
+	}
+	
 	
 	@Override
 	public List<User> getAllUsers() {
@@ -123,7 +128,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> SeerchUsersByFirstName(String firstName) {
 		
-		return this.userRepo.findAll().stream().filter((u)-> u.getFirstName().equalsIgnoreCase(firstName)).collect(Collectors.toList());
+		return this.userRepo.findAll().stream().
+				filter((u)-> u.getFirstName().toLowerCase().equalsIgnoreCase(firstName)).collect(Collectors.toList());
 	}
 }
 

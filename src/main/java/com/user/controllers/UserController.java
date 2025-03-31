@@ -36,12 +36,11 @@ public class UserController {
 	@PostMapping
 	public UserResponse createUser(@RequestBody User user)
 	{
-		User getUser = this.userServiceImpl.getByEmail(user.getEmail());
-		
-		if( getUser == null)  // user email not present, then add new user.
-			return new UserResponse(HttpStatus.OK.value(),"success", this.userServiceImpl.createUser(user) );
-		else                  // user found with same emailid-( conflict same email id )
-			return new UserResponse("Email already exists",409 );
+		User getUser = this.userServiceImpl.createUser(user);
+		if( getUser != null) 			 					// user email not present, then add new user.
+			return new UserResponse(HttpStatus.OK.value(),"success",getUser  );
+		                 									// user found with same emailid-( conflict same email id )
+		return new UserResponse("Email already exists",409 );
 	}
 	
 	
@@ -53,9 +52,9 @@ public class UserController {
 		
 		User getUser = this.userServiceImpl.getUserByEmailAndPassword(user.getEmail(), user.getPassword());
 		
-		if( getUser != null )        // found user by email,password
+		if( getUser != null )        			   // found user by email,password
 			return new UserResponse( HttpStatus.OK.value(),"success", getUser  );
-						// not. found user by email,password
+												// not. found user by email,password
 		return new UserResponse( "Invalid Crediential " ,HttpStatus.NOT_FOUND.value() );	
 	}
 	
@@ -65,22 +64,22 @@ public class UserController {
 	@PutMapping
 	public UserResponse updateUser(@RequestBody User newUser )
 	{
-		User existUser = this.userServiceImpl.getByEmail(newUser.getEmail());
-		 if( existUser != null )
+		 User updatedUser = this.userServiceImpl.updateUser(newUser);
+		if( updatedUser != null )
 		 {
-			 User updatedUser = this.userServiceImpl.updateUser(newUser);
 			return new UserResponse( HttpStatus.OK.value(),"updated", updatedUser  );	 
 		 }
-		return new UserResponse("not updated " ,  HttpStatus.NOT_FOUND.value() );
+		
+		return new UserResponse("not updated" ,  HttpStatus.NOT_FOUND.value() );
 	}
 	
 
 	
+	
 	// http://localhost:8080/users?email=harry@gmail.com&pass=harry1234
 	
 	@DeleteMapping
-	public UserResponse deleteUser(@RequestParam String email,
-						@RequestParam String pass)
+	public UserResponse deleteUser(@RequestParam String email,  @RequestParam String pass)
 	{
 		User user=this.userServiceImpl.getUserByEmailAndPassword(email, pass);
 		if( user != null)
@@ -95,8 +94,8 @@ public class UserController {
 	
 	
 	
-	// Additional API's
 	
+	// Additional API's
 	
 	@GetMapping
 	public ResponseEntity<List<User>> getAllUsers()
@@ -105,17 +104,16 @@ public class UserController {
 		return ResponseEntity.ok( users );
 	}
 	
+	
+	
 	@GetMapping("/getById/{id}")
 	public UserResponse getUserById( @PathVariable Integer id )
 	{
 		User getUser = this.userServiceImpl.getUserById(id);
-		UserResponse response = null;
 		
 		if( getUser != null )
 			return new UserResponse(HttpStatus.OK.value() , "success", getUser  );
-		
 		return new UserResponse(  "Not found Id", HttpStatus.OK.value() );
-
 	}
 	
 	
@@ -148,9 +146,7 @@ public class UserController {
 	@GetMapping("/{firstName}")
 	public ResponseEntity<List<User>> SerachUsersByFirstName(@PathVariable String firstName)
 	{
-		List<User> users=this.userServiceImpl.SeerchUsersByFirstName(firstName);
-		
-		return ResponseEntity.ok( users);
+		return ResponseEntity.ok(  this.userServiceImpl.SeerchUsersByFirstName(firstName)  );
 	}
 
 }
