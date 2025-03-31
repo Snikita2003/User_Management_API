@@ -96,7 +96,7 @@ public class UserServiceImpl implements UserService {
 		u.getEmail()).collect(Collectors.toSet());
 		
 		List<User> uniqueUsers= users.stream().filter(u->u.getEmail()!=null && 
-				emails.contains(u.getEmail() )).collect(Collectors.toList());
+				!emails.contains(u.getEmail() )).collect(Collectors.toList());
 		
 		this.userRepo.saveAll(uniqueUsers);
 		

@@ -124,7 +124,9 @@ public class UserController {
 	@PostMapping("/")
 	public  ResponseEntity<List<User>> createMultipleUsers(@RequestBody List<User> users )
 	{
-		return  new ResponseEntity<List<User>>( this.userServiceImpl.createMultipleUsers(users),HttpStatus.OK);
+		List<User> storedUsers = this.userServiceImpl.createMultipleUsers(users) ;
+		return ResponseEntity.ok(storedUsers);
+		
 	}
 	
 	
